@@ -18,8 +18,8 @@ Valid:	Verifica expiração
 			- iat (issued at)
 */
 
-const prefeituraClaimKey = "cpa_prefeitura_id"
-const typeClaimKey = "cpa_token_type"
+const prefeituraClaimKey = "colmeia_prefeitura_id"
+const typeClaimKey = "colmeia_token_type"
 
 type Token struct {
 	RawToken       string
