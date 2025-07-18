@@ -26,7 +26,7 @@ func TestParseToken_ValidToken(t *testing.T) {
 	// Chama sua função real
 	parsed, err := ParseToken(string(raw))
 	assert.NoError(t, err)
-	assert.Equal(t, "pref-123", parsed.PrefeituraID)
+	assert.Equal(t, "pref-123", parsed.PrefeituraUUID)
 	assert.Equal(t, "access", parsed.TokenType)
 	assert.Equal(t, "123", parsed.Subject)
 	assert.Equal(t, "cpa", parsed.Issuer)

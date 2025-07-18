@@ -22,12 +22,12 @@ const prefeituraClaimKey = "cpa_prefeitura_id"
 const typeClaimKey = "cpa_token_type"
 
 type Token struct {
-	RawToken     string
-	PrefeituraID string
-	TokenType    string
-	Subject      string // sub
-	Issuer       string // iss
-	Expiration   string // exp
+	RawToken       string
+	PrefeituraUUID string
+	TokenType      string
+	Subject        string // sub
+	Issuer         string // iss
+	Expiration     string // exp
 }
 
 // Função exportada (primeira letra maiúscula)
@@ -60,12 +60,12 @@ func ParseToken(rawToken string) (Token, error) {
 	tokenTypeString, _ := tokenType.(string)
 
 	ret := Token{
-		RawToken:     rawToken,
-		PrefeituraID: prefeituraIDString,
-		TokenType:    tokenTypeString,
-		Subject:      parsedToken.Subject(),
-		Issuer:       parsedToken.Issuer(),
-		Expiration:   parsedToken.Expiration().String(),
+		RawToken:       rawToken,
+		PrefeituraUUID: prefeituraIDString,
+		TokenType:      tokenTypeString,
+		Subject:        parsedToken.Subject(),
+		Issuer:         parsedToken.Issuer(),
+		Expiration:     parsedToken.Expiration().String(),
 	}
 
 	return ret, nil
